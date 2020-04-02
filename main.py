@@ -7,7 +7,7 @@ from constants.InSb import InSb
 #   Constants
 L = 1e-6
 T = 300
-r = 2
+r = 0
 
 def main():
     #   Init the range of plots

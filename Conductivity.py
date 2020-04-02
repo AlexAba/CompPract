@@ -17,13 +17,13 @@ class Conductivity:
     def Ballistic(self, range):
         ans = []
         for i in range:
-            ans.append(2 * (self.q ** 2) * (FermiDiracIntegral.MinusOne(i)) / self.h)
+            ans.append(2 * (self.q ** 2) * (FermiDiracIntegral.GetValue(-1, i)) / self.h)
 
         return ans
 
     def Difussion(self, range):
         ans = []
         for i in range:
-            ans.append(2 * (self.q ** 2) / self.h * (self.MFP / self.L) * gamma(self.r + 1) * FermiDiracIntegral.CommonIntegral(self.r - 1, i))
+            ans.append(2 * (self.q ** 2) / self.h * (self.MFP / self.L) * gamma(self.r + 1) * FermiDiracIntegral.GetValue(self.r - 1, i))
 
         return ans
